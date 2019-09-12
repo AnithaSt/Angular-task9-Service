@@ -1,0 +1,30 @@
+h2 {
+    color: rgb(224, 9, 117);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border-bottom: 1px solid rgb(224, 9, 109);
+  }
+input{
+    width: 100%;
+    border:none;
+    border-bottom: 3px solid rgb(156, 152, 152);
+    outline: none !important;
+}
+input:focus {
+    border-bottom: 3px solid rgb(224, 9, 117);
+  
+  }
+  input::placeholder {
+    color: rgb(18, 218, 201);
+  }
+  button{
+      background-color: rgb(224, 9, 117);
+      border-color: rgb(224, 9, 117);
+      border-radius: 5px;
+      width: 120px;
+      height: 40px;
+      color: white
+  }
+  .detail{
+      background-color: #ff0000;
+      color: white;
+  }

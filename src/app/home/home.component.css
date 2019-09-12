@@ -1,0 +1,32 @@
+.head {
+    text-align: center;
+      color: blue;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  #head{
+    background-color: #f01657;
+}
+h1 {
+    color: rgb(184, 224, 9);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+.button1{
+    background-color: rgb(93, 201, 21);
+    border-color: rgb(93, 201, 21);
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    color: white   
+}
+.back{        
+    background-image: url("/assets/1.jpg") ;
+    background-size: cover;
+    
+}
+.color{
+  background-color: #f09ada66;
+}
+table{
+  width: 100%;
+}
+ 

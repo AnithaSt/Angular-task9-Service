@@ -1,0 +1,51 @@
+<div class="header text-center text-white" id="head">
+	<h1><br>Service</h1>
+	<button type="submit" routerLink="/home" class="mr-3 mt-5 button1">Home</button>
+  <button type="submit" routerLink="/add-details" class="mr-3 mt-5 mb-5 button1">Add-Details</button> 
+</div>
+<div class="container-fluid bg-secondary">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <h1 class="head mt-5"> Student Database</h1>
+    </div>
+  </div>
+</div>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 text-center mt-5">
+      <input type="button"value="Add Details"class=" btn btn-primary border-primary" routerLink="/add-details" >
+    </div>
+  </div>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-9 col-md-12 mt-5">
+      <table class="table table-striped text-center table-responsive  ">
+        <thead>
+            <th>#</th>
+            <th>Name</th>
+            <th>E-Mail</th>
+            <th>Register No</th>
+            <th>Age</th>
+            <th>Aadhaar No</th>
+            <th>View</th>
+            <th>Delete</th>
+        </thead>
+        <tbody id="tabbody" *ngFor="let data of bindData" class="text-white">
+          <td>{{data.id}}</td>
+          <td>{{data.myname}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.registerno}}</td>
+          <td>{{data.age}}</td>
+          <td>{{data.aadhaarno}}</td>
+          <a routerLink="/view/{{data.id}}"><td><i class="far fa-eye text-warning"></i></td></a>
+          <td (click)="del(data.id)"><i class="fas fa-trash text-danger"></i></td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+<div class="footer  text-center " id="head">@Service<br><br></div>

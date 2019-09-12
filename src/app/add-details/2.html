@@ -1,0 +1,134 @@
+import { Component, OnInit } from '@angular/core';
+import{ EmployeeService } from '../employee.service';
+import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common'; 
+
+@Component({
+  selector: 'app-detail',
+  templateUrl: './detail.component.html',
+  styleUrls: ['./detail.component.css'],
+ 
+  
+})
+export class DetailComponent implements OnInit {
+  registerForm: FormGroup;
+  submitted = false;
+  see:any;
+  show:any;
+  date;any;
+  constructor(private datepipe: DatePipe,public data:EmployeeService,private toastr: ToastrService,private formBuilder: FormBuilder) {
+  
+   }
+
+  ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required]
+      // fatherName: ['', Validators.required],
+      // motherName: ['', Validators.required],
+      // email: ['', [Validators.required, Validators.email]],
+      // phoneNum:['',[Validators.required]],
+      // dateofBirth:['',[Validators.required]],
+      // altNum:[''],
+      // element_8:['',[Validators.required]],
+      // cStreet:['',[Validators.required]],
+      // cCity:['',[Validators.required]],
+      // cState:['',[Validators.required]],
+      // country:['',[Validators.required]],
+      // cZip:['',[Validators.required]],
+      // pStreet:['',[Validators.required]],
+      // pCity:['',[Validators.required]],
+      // pState:['',[Validators.required]],
+      // pCountry:['',[Validators.required]],
+      // pZip:['',[Validators.required]],
+      // doj:['',[Validators.required]],
+      // dol:[''],
+      // school:['',[Validators.required]],
+      // percentage:['',[Validators.required]],
+      // sSchool:[''],
+      // sPercentage:[''],
+      // diploma:[''],
+      // dCourse:[''],
+      // dPercentage:[''],
+      // collage:['',[Validators.required]],
+      // ug:['',[Validators.required]],
+      // ugCourse:['',[Validators.required]],
+      // cPercentage:['',[Validators.required]],
+      // pCollage:[''],
+      // pg:[''],
+      // pgCourse:[''],
+      // pgPercentage:['']
+      
+  });
+
+  }
+  get f() { return this.registerForm.controls; }
+
+  onSubmit() {
+    
+    // let data = {
+    //   firstName:this.registerForm.value.firstName,
+    //   lastName:this.registerForm.value.lastName,
+    //   fatherName:this.registerForm.value.fatherName,
+    //   motherName:this.registerForm.value.motherName,
+    //   email:this.registerForm.value.email,      
+    //   phoneNum:this.registerForm.value.phoneNum,
+    //   altNum:this.registerForm.value.altNum,
+    //   element_8:this.registerForm.value.element_8,
+    //   dateofBirth:this.datepipe.transform(this.registerForm.value.dateofBirth,'MM-dd-yy'),
+    //   cStreet:this.registerForm.value.cStreet,
+    //   cCity:this.registerForm.value.cCity,
+    //   cState:this.registerForm.value.cState,
+    //   country:this.registerForm.value.country,
+    //   cZip:this.registerForm.value.cZip,
+    //   pStreet:this.registerForm.value.pStreet,
+    //   pCity:this.registerForm.value.pCity,
+    //   pState:this.registerForm.value.pState,
+    //   pCountry:this.registerForm.value.pCountry,
+    //   pZip:this.registerForm.value.pZip,
+    //   doj:this.datepipe.transform(this.registerForm.value.doj,'MM-dd-yy'),
+    //   dol:this.datepipe.transform(this.registerForm.value.dol,'MM-dd-yy'),
+    //   school:this.registerForm.value.school,
+    //   percentage:this.registerForm.value.percentage,
+    //   sSchool:this.registerForm.value.sSchool,
+    //   sPercentage:this.registerForm.value.sPercentage,
+    //   diploma:this.registerForm.value.diploma,
+    //   dCourse:this.registerForm.value.dCourse,
+    //   dPercentage:this.registerForm.value.dPercentage,
+    //   collage:this.registerForm.value.collage,
+    //   ug:this.registerForm.value.ug,
+    //   ugCourse:this.registerForm.value.ugCourse,
+    //   cPercentage:this.registerForm.value.cPercentage,
+    //   pCollage:this.registerForm.value.pCollage,
+    //   pg:this.registerForm.value.pg,
+    //   pgCourse:this.registerForm.value.pgCourse,
+    //   pgPercentage:this.registerForm.value.pgPercentage,
+    // }
+    this.submitted = true;   
+    if (this.registerForm.invalid) {
+        return;
+    }
+    // else{
+    //       console.log(this.registerForm.value)
+    //       this.data.senddata(this.registerForm).subscribe(res=>{
+    //         console.log(res)
+    //         alert("Add Successfully");
+    //       })
+    //     }
+
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
+}
+  change(value){
+    this.see = value;
+    console.log(this.see);
+   } 
+   chang(value){
+    this.show=value;
+    console.log(this.show);
+
+   }
+  
+
+   
+}
